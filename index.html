@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Benjamin Harland · Mechanical Design Engineer</title>
+<meta name="description" content="Engineering portfolio of Benjamin Harland, mechanical design engineer: industrial placement work, CFD research and personal projects.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+:root{--ink:#15181C;--muted:#4D545C;--rule:#C9CED3;--accent:#C4501A;--bg:#FFFFFF;--soft:#F4F5F6}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Archivo','Helvetica Neue',Helvetica,Arial,sans-serif;font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:var(--ink)}a:hover{color:var(--accent)}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.mono{font-family:'IBM Plex Mono',ui-monospace,Menlo,Consolas,monospace;font-size:12px;font-weight:500;letter-spacing:.1em;text-transform:uppercase}
+.accent{color:var(--accent)}
+.muted{color:var(--muted)}
+
+/* top bar */
+.topbar{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--ink)}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;min-height:56px}
+.topbar nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.topbar a{text-decoration:none}
+.topbar .name{font-weight:700}
+
+/* hero */
+.hero{padding:72px 0 56px;border-bottom:1px solid var(--rule)}
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,440px);gap:56px;align-items:end}
+.hero h1{margin:16px 0 12px;font-size:clamp(56px,9vw,104px);line-height:.9;font-weight:700;font-stretch:75%;letter-spacing:-.01em}
+.hero .role{margin:0 0 20px;font-size:24px;font-weight:500}
+.hero p{margin:0;max-width:540px;color:var(--muted)}
+.hero .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--ink);text-decoration:none;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:13px;font-weight:500;letter-spacing:.06em;text-transform:uppercase}
+.btn.primary{background:var(--ink);color:#fff}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.hero-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:200px 200px;gap:10px}
+
+/* index list */
+.index{list-style:none;margin:0;padding:0;border-top:1px solid var(--ink)}
+.index li a{display:grid;grid-template-columns:40px minmax(0,1fr) auto;gap:12px;align-items:baseline;padding:10px 0;border-bottom:1px solid var(--rule);text-decoration:none}
+.index li a:hover span:nth-child(2){color:var(--accent)}
+
+/* project sections */
+section.project{padding:72px 0;border-bottom:1px solid var(--rule);scroll-margin-top:64px}
+.kicker{display:flex;justify-content:space-between;gap:16px;padding-bottom:12px;margin-bottom:32px;border-bottom:1px solid var(--ink)}
+h2{margin:10px 0 16px;font-size:clamp(34px,4.6vw,48px);line-height:1.02;font-weight:700;font-stretch:75%;letter-spacing:-.005em;text-wrap:balance}
+h3{margin:0 0 6px;font-size:22px;line-height:1.15;font-weight:700;font-stretch:85%}
+p{margin:0 0 14px;text-wrap:pretty}
+.cols{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:start}
+.facts{border-top:1px solid var(--rule)}
+.facts div{padding:12px 0;border-bottom:1px solid var(--rule)}
+.facts .mono{display:block;margin-bottom:4px;color:var(--muted)}
+figure{margin:0;position:relative}
+figcaption{margin-top:8px;font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;line-height:1.4;color:var(--muted)}
+.tag{position:absolute;top:10px;left:10px;background:#fff;padding:3px 8px;border:1px solid var(--rule);font-family:'IBM Plex Mono',ui-monospace,monospace;font-size:12px;font-weight:500;letter-spacing:.08em;text-transform:uppercase}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.h260 figure img,.h260>img{height:260px}
+.h340 figure img{height:340px}
+.h420 figure img{height:420px}
+.contain img{object-fit:contain;background:var(--soft)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:28px}
+.cards p{font-size:15px;color:var(--muted)}
+.side{border-top:1px solid var(--rule)}
+.side>div{padding:18px 0;border-bottom:1px solid var(--rule)}
+.side p{font-size:16px;margin:0}
+
+footer{padding:56px 0 72px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+
+@media (max-width:900px){
+  .hero .wrap,.cols{grid-template-columns:1fr;gap:32px}
+  .cards{grid-template-columns:1fr}
+  .g3,.g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .topbar nav{display:none}
+  .h420 figure img{height:320px}
+}
+@media (max-width:560px){
+  .wrap{padding:0 16px}
+  .g2,.g3,.g4{grid-template-columns:1fr}
+  .hero-grid{grid-template-rows:150px 150px}
+  .h340 figure img,.h420 figure img{height:280px}
+  section.project{padding:56px 0}
+}
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="name" href="#top">Benjamin Harland</a>
+    <nav class="mono" aria-label="Sections">
+      <a href="#placement">Placement</a>
+      <a href="#cfd">CFD</a>
+      <a href="#personal">Personal</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <div class="mono accent">Engineering portfolio · 2026</div>
+      <h1>Benjamin<br>Harland</h1>
+      <p class="role">Mechanical design engineer</p>
+      <p>First Class BEng (Hons) in Mechanical Engineering from Liverpool John Moores University, 14 months as a Design Engineer at Roaches International, and now studying for an MSc in Advanced Mechanical Engineering at the University of Leeds.</p>
+      <div class="links">
+        <a class="btn primary" href="mailto:b.harland24@gmail.com">Email me</a>
+        <a class="btn" href="portfolio.pdf">Download PDF</a>
+      </div>
+    </div>
+    <div>
+      <ol class="index">
+        <li><a href="#winch"><span class="mono accent">01</span><span>Winch dyeing machine modernisation</span><span class="mono muted">Roaches</span></a></li>
+        <li><a href="#redesigns"><span class="mono accent">02</span><span>Crocktec Auto and OptiPill redesigns</span><span class="mono muted">Roaches</span></a></li>
+        <li><a href="#sentire"><span class="mono accent">03</span><span>Sample holders for the Sentire</span><span class="mono muted">Roaches</span></a></li>
+        <li><a href="#cfd"><span class="mono accent">04</span><span>CFD study of nozzle atomisation</span><span class="mono muted">LJMU</span></a></li>
+        <li><a href="#cars"><span class="mono accent">05</span><span>GTI restoration and C1 frame repair</span><span class="mono muted">Personal</span></a></li>
+        <li><a href="#workshop"><span class="mono accent">06</span><span>Aluminium furnace and apple press</span><span class="mono muted">Personal</span></a></li>
+        <li><a href="#other"><span class="mono accent">07</span><span>Other projects</span><span class="mono muted">Personal</span></a></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<!-- 01 Winch -->
+<section class="project" id="placement">
+<div class="wrap" id="winch">
+  <div class="kicker mono"><span>Industrial placement</span><span class="accent">01 / 07</span></div>
+  <div class="cols">
+    <figure class="h420"><img src="images/winch.jpg" alt="Stainless steel winch dyeing machine with its control panel" loading="lazy"><figcaption>Winch dyeing machine</figcaption></figure>
+    <div>
+      <div class="mono accent">Roaches International · 2024–25</div>
+      <h2>Modernising a 1980s winch dyeing machine</h2>
+      <p>An order for ten winch dyeing machines meant bringing a 1980s design up to date. I built the full CAD assembly from the original hand drawings, helped redesign several of the mechanisms and verified the design with FEA.</p>
+      <div class="facts">
+        <div><span class="mono">What changed</span>The tank sump was reshaped so the machine runs on less dye liquor, which has to be exchanged between batches of cloth. The mechanical systems and automation were updated to make setup less labour-intensive, with a new system for loading and unloading cloth and an updated control panel.</div>
+        <div><span class="mono">Why it matters</span>The liquor is exchanged for every batch of cloth, so a smaller sump means less water, dye and chemicals per batch, and less liquor to heat. Simpler setup and loading also cut the operator time each batch takes.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 02 Redesigns -->
+<section class="project" id="redesigns">
+<div class="wrap">
+  <div class="kicker mono"><span>Industrial placement</span><span class="accent">02 / 07</span></div>
+  <div class="cols">
+    <div>
+      <div class="mono accent">Roaches International · 2024–25</div>
+      <h2>Redesigning two machines for an international exhibition</h2>
+    </div>
+    <div>
+      <p>The aim was to make both machines easier to manufacture and assemble, and to fix customers' pain points, such as ease of use. I redesigned their drives and fabrications, ran the design meetings, and delivered both as working prototypes to a tight deadline.</p>
+      <p class="muted">Both redesigns meant designing to each process's limits: turned and milled parts, laser-cut and folded sheet metal and its thickness, welded fabrications and 3D-printed parts, with attention to bearing selection, tolerances and fits, and what drives up manufacturing cost.</p>
+    </div>
+  </div>
+  <div class="grid g3 h340" style="margin-top:32px">
+    <figure><img src="images/crocktec.jpg" alt="Crocktec Auto tester with a red fabric sample under its rubbing head" loading="lazy" style="object-position:50% 15%"></figure>
+    <figure><img src="images/optipill.jpg" alt="Redesigned OptiPill machines with their new-style test boxes" loading="lazy" style="object-position:50% 25%"></figure>
+    <figure><img src="images/optipill-shaft.jpg" alt="OptiPill drive shaft with its spring lock for holding a test box" loading="lazy"></figure>
+  </div>
+  <div class="cards">
+    <div><h3>Crocktec Auto</h3><p>Tests colour fastness to rubbing. I designed a wire holster to keep wires from snagging on moving parts. The test standard sets the load on the sample, and tolerance stack-up calculations showed the design stays within it when parts are made to drawing.</p></div>
+    <div><h3>OptiPill</h3><p>Tests fabric pilling. Belt slip was knocking the boxes out of line, so I redesigned the whole drive: shafts, bearing housings, belt layout and main mounting plate. I also simplified the costly fabrication and gave it a slicker box style.</p></div>
+    <div><h3>OptiPill: box mounting</h3><p>A spring lock holds each box on the driven shaft so boxes go on and off quickly, and a braked motor stops the shaft spinning while one is fitted.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- 03 Sentire -->
+<section class="project" id="sentire">
+<div class="wrap">
+  <div class="kicker mono"><span>Industrial placement</span><span class="accent">03 / 07</span></div>
+  <div class="cols">
+    <div>
+      <div class="mono accent">Roaches International · 2024–25</div>
+      <h2>Sample holders for the Sentire</h2>
+      <p>The Sentire tests fabric quality with high precision, so results only compare if every sample is treated the same. I designed the holders so all fabric is handled in exactly the same way, keeping tests consistent and reducing human error.</p>
+      <div class="facts"><div><span class="mono">Design</span>That control is why the bodies are machined from aluminium. I optimised them to reduce weight while keeping the centre of mass central, and paired them with 3D-printed clamps and rings.</div></div>
+    </div>
+    <div class="grid">
+      <figure class="h340"><img src="images/sample-holders.jpg" alt="Two pocketed, machined aluminium sample holder bodies" loading="lazy" style="object-position:50% 90%"><figcaption>Lightened bodies, centre of mass kept central</figcaption></figure>
+      <div class="grid g2 h260">
+        <figure><img src="images/sample-clamps.jpg" alt="Two sample holders with spring-loaded 3D-printed clamps fitted" loading="lazy"><figcaption>3D-printed clamps fitted</figcaption></figure>
+        <figure><img src="images/sample-rings.jpg" alt="Sample holders beside two 3D-printed rings" loading="lazy"><figcaption>3D-printed rings</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 04 CFD -->
+<section class="project" id="cfd">
+<div class="wrap">
+  <div class="kicker mono"><span>Final-year project</span><span class="accent">04 / 07</span></div>
+  <div class="cols">
+    <div>
+      <div class="mono accent">Liverpool John Moores University · 86%</div>
+      <h2>Atomisation in air-assisted nozzles</h2>
+      <p class="muted"><em>A Parametric Computational Fluid Dynamics Study of Newtonian and Non-Newtonian Fluid Atomisation in Air-Assisted Nozzles</em></p>
+      <div class="facts">
+        <div><span class="mono">Model</span>A 2D transient multiphase model in ANSYS Fluent, using the Volume of Fluid (VOF) method, RANS turbulence modelling and the Cross model for shear-thinning viscosity.</div>
+        <div><span class="mono">Findings</span>Under identical operating conditions, the shear-thinning fluid showed greater deformation, breakup and jet dispersion than the Newtonian fluid.</div>
+        <div><span class="mono">Validation</span>Newtonian results showed reasonable agreement with published experimental data (Jakobs et al., 2014). I traced instability in the non-Newtonian case to Courant number fluctuations.</div>
+      </div>
+    </div>
+    <div class="grid g2 contain h340">
+      <figure><img src="images/cfd-newtonian-liquid.png" alt="Simulated liquid volume fraction: the Newtonian jet leaving the nozzle and breaking up into droplets" loading="lazy"><figcaption>Newtonian, liquid VOF</figcaption></figure>
+      <figure><img src="images/cfd-experiment.png" alt="Experimental image of the liquid jet breaking up below the nozzle" loading="lazy"><figcaption>Experiment: Jakobs et al. (2014)</figcaption></figure>
+      <figure><img src="images/cfd-newtonian-air.png" alt="Simulated air volume fraction for the Newtonian case, with the jet head rolling up into vortices" loading="lazy"><figcaption>Newtonian, air VOF</figcaption></figure>
+      <figure><img src="images/cfd-viscosity.png" alt="Molecular viscosity contour of the non-Newtonian jet, with viscosity varying along the deforming jet" loading="lazy"><figcaption>Viscosity contour, non-Newtonian</figcaption></figure>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 05 Cars -->
+<section class="project" id="personal">
+<div class="wrap" id="cars">
+  <div class="kicker mono"><span>Personal projects</span><span class="accent">05 / 07</span></div>
+  <div class="grid g4 h340">
+    <figure><img src="images/golf-before.jpg" alt="Red Golf GTI on a driveway with its front bumper removed, before restoration" loading="lazy"><span class="tag">Before</span></figure>
+    <figure><img src="images/golf-after.jpg" alt="The restored red Golf GTI parked on a street at night" loading="lazy" style="object-position:50% 45%"><span class="tag">After</span></figure>
+    <figure><img src="images/c1-before.jpg" alt="Large rust hole in the underside of a Citroën C1, before repair" loading="lazy" style="object-position:80% 50%"><span class="tag">C1 before</span></figure>
+    <figure><img src="images/c1-after.jpg" alt="The same area of the C1 after welding, finished in black" loading="lazy"><span class="tag">C1 after</span></figure>
+  </div>
+  <div class="cols" style="margin-top:32px">
+    <div>
+      <div class="mono accent">Personal project</div>
+      <h2>Golf Mk5 GTI restoration</h2>
+      <p>I brought a non-running Golf GTI back to full running order: I resolved ECU, injector and spark plug problems, cleaned the intake manifold, and traced and replaced faulty sensors. I also rebuilt the front and rear suspension with new arms, bushings, struts and springs, and learnt basic MIG welding to repair the subframe.</p>
+      <figure class="h260" style="margin-top:20px"><img src="images/golf-suspension.jpg" alt="Suspension rebuild laid out on a tarp: the repainted subframe, hubs, anti-roll bar and new bolts" loading="lazy"><figcaption>Suspension rebuild</figcaption></figure>
+    </div>
+    <div>
+      <div class="mono accent">Personal project</div>
+      <h2>Citroën C1 frame repair</h2>
+      <p>A friend's Citroën C1 had rusted through at a subframe mounting point. The fuel tank, suspension and subframe were removed for access, the corroded metal was cut back to sound steel, and a new sheet-steel section was welded in before reassembly.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 06 Workshop -->
+<section class="project" id="workshop">
+<div class="wrap">
+  <div class="kicker mono"><span>Personal projects</span><span class="accent">06 / 07</span></div>
+  <div class="grid g3 h340">
+    <figure><img src="images/furnace-coal.jpg" alt="Coal-fired furnace melting aluminium, with flame rising from the crucible" loading="lazy" style="object-position:50% 82%"><span class="tag">Coal-fired</span></figure>
+    <figure><img src="images/furnace-electric.jpg" alt="Electric furnace built from insulating firebrick, clamped with steel bands and tie rods, beside its digital temperature controller" loading="lazy"><span class="tag">Electric</span></figure>
+    <figure><img src="images/apple-press.jpg" alt="Apple press: a black box-section frame with a hydraulic bottle jack above a perforated stainless steel basket and pan" loading="lazy" style="object-position:50% 25%"><span class="tag">Apple press</span></figure>
+  </div>
+  <div class="cols" style="margin-top:32px;grid-template-columns:minmax(0,7fr) minmax(0,5fr)">
+    <div>
+      <div class="mono accent">Personal project</div>
+      <h2>Aluminium melting furnace</h2>
+      <p>A furnace for melting down scrap aluminium and foil for sand casting. The first version was coal-fired: a cut-down gas cylinder held the fuel bed, a hairdryer acted as a forced-air blower to raise the combustion temperature, and the crucible sat directly in the coals. The second version switched to electric heating, with a chamber of insulating firebrick clamped by steel bands and tie rods, giving tighter temperature control and cleaner, easier running.</p>
+    </div>
+    <div>
+      <div class="mono accent">Personal project</div>
+      <h2>Hydraulic apple press</h2>
+      <p>A 6-tonne hydraulic shop press, converted for cider-making. The jack drives a plate down into a perforated stainless steel basket, crushing the apples, while the pan beneath collects the juice. The conversion was fabricated with a mix of welded and bolted joints.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- 07 Other -->
+<section class="project" id="other">
+<div class="wrap">
+  <div class="kicker mono"><span>Other projects</span><span class="accent">07 / 07</span></div>
+  <div class="cols" style="grid-template-columns:minmax(0,8fr) minmax(0,4fr)">
+    <div>
+      <div class="mono accent">Personal project · in progress</div>
+      <h2>Dual cat feeder</h2>
+      <p>A feeder for two cats that reads the chip on each cat's collar and retracts the other cat's bowl, so each cat gets its own food. It will also dispense precise portions automatically throughout the day. A single motor drives both bowls through a slider-crank mechanism: a crankshaft and connecting rods, as in an engine, convert its rotation into the linear motion of each bowl along a slider rail.</p>
+      <p>I'm currently designing the mechanical system, with a CAD model and 3D-printed parts so far, and will then move on to the electrical system, integrating the collar-chip reader with the motor control and planning a Zigbee link into Home Assistant so the feeder can be controlled from a phone.</p>
+      <div class="grid g3 contain h260" style="margin-top:20px">
+        <figure><img src="images/cat-feeder-assembly.jpg" alt="CAD model of the full cat feeder: frame, hopper and food container above two bowls" loading="lazy"><figcaption>Full assembly</figcaption></figure>
+        <figure><img src="images/cat-feeder-both-out.jpg" alt="Close-up of the crankshaft, connecting rods and slider rails with both bowls extended" loading="lazy"><figcaption>Both bowls out</figcaption></figure>
+        <figure><img src="images/cat-feeder-one-in.jpg" alt="Close-up of the crankshaft, connecting rods and slider rails with one bowl retracted and one extended" loading="lazy"><figcaption>One in, one out</figcaption></figure>
+      </div>
+    </div>
+    <div class="side">
+      <div><h3>Home automation</h3><p>I set up and programmed a Home Assistant system, writing custom automations that link sensors, lighting, automatic curtains, central heating and cameras.</p></div>
+      <div><h3>Arduino and electronics</h3><p>I'm experimenting with Arduino kits and small circuits, wiring up buttons, switches and daylight sensors. No set project yet.</p></div>
+      <div><h3>3D printing</h3><p>I use my 3D printer for functional parts, such as a vacuum nozzle shaped to recover debris from inside the GTI's engine, a spring-loaded scraper for cleaning stovetop espresso pots and fixings to hold a lamp's bulb in place, as well as Dungeons &amp; Dragons figurines.</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <div>
+      <div class="mono accent">Contact</div>
+      <p style="margin:8px 0 0;font-size:22px;font-weight:600"><a href="mailto:b.harland24@gmail.com">b.harland24@gmail.com</a></p>
+      <p class="muted" style="margin:4px 0 0">Leeds, UK</p>
+    </div>
+    <div style="align-self:end"><a class="btn" href="portfolio.pdf">Download the PDF portfolio</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
